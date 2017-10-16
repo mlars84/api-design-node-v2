@@ -23,4 +23,49 @@ If you see issues:
 * clone your fork
 * cut a branch
 * write your code
-* issue PR to upstream
+* issue PR to upstream# Notes
+- Why Express?
+ - the go to for creating API's with node
+ - other frameworks are based off express
+ - tons of plugins and integrations
+ - plenty of resources
+ - easy to use
+ - fast to develop
+ - easy to test
+
+- Features
+ - declarative routing
+   - exact, pattern, glob(splat, *), parameter matching
+ - Middleware
+   - functions to run serially on your requests
+ - powerful response options
+   - from JSON to static files
+   - stream
+   - redirects
+ - DB agnostic
+ - Highly configurable
+
+- Hot Module Loading
+ ```
+ if (module.hot) {
+    module.hot.accept(['./server'], () => {
+ 	 server.removeListener('request', currentApp)
+ 	 server.on('request', app)
+ 	 currentApp = app
+    })
+ }
+ ```
+- `app.all('*', (req,res) => res.json({ok: true}) )`
+- Comes from webpack config and allows `hot` param on `module`
+
+### Routing with Express
+ - Flexible pattern matching
+ - handles parameters
+ - multi-router support
+ - static & dynamic configuration
+ - support for all HTTP verbs (only applies to REST)
+ - order based
+ - mount different routers on different paths that have different purposes
+
+
+
